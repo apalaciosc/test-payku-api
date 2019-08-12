@@ -28,4 +28,9 @@ class TransactionsController < ApplicationController
     transaction.save
     render json: transaction, status: 200
   end
+
+  def transaction
+    transaction = Transaction.find(params[:id])
+    render json: transaction, status: 200
+  end
 end
