@@ -13,8 +13,8 @@ class Transaction < ApplicationRecord
       token: params_request[:token],
       currency_code: 'CLP',
       amount: price,
-      email: user.email,
-      detail: get_transaction_detail
+      email: '',
+      detail: ''
     }
     response = HTTParty.get(url, query: query, headers: { 'Content-Type' => 'application/json' })
     return response.to_s == "VALID" ? true : false
