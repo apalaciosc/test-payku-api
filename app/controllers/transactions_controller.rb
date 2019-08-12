@@ -30,7 +30,7 @@ class TransactionsController < ApplicationController
   end
 
   def transaction
-    transaction = Transaction.find(params[:id])
+    transaction = Transaction.find_by_transaction_id(params[:id])
     render json: transaction, status: 200
   end
 end
